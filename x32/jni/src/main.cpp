@@ -1,0 +1,9 @@
+#include <jni.h>
+//#include <android/log.h>
+#include "libs/KittyMemory/MemoryPatch.h"
+#include <libs/Substrate/CydiaSubstrate.h>
+#include <memory.h>
+#include <dlfcn.h>
+#include <cstdio>
+#include <cstdlib>
+#import "include/Utils.h"

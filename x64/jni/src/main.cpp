@@ -1,0 +1,10 @@
+#include <jni.h>
+//#include <android/log.h>
+#include "libs/KittyMemory/MemoryPatch.h"
+#include "libs/64InlineHook/And64InlineHook.hpp"
+#include <memory.h>
+#include <dlfcn.h>
+#include <cstdio>
+#include <cstdlib>
+#include "exploits/DoSkillDamage.h"
+#import "include/Utils.h"
