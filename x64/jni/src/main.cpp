@@ -10,7 +10,15 @@
 #import "include/Utils.h"
 
 void* hack_thread(void*) {
-    HackFunction();
+    LOGI("I have been loaded.");
+    // loop until our target library is found
+    do {
+        sleep(1);
+    } while (!get_libBase("libil2cpp.so"));
+    LOGI("I found the il2cpp lib. Address is: %p", (void*)get_libBase("libil2cpp.so"));
+    LOGI("Calling Main Hack");
+    IceWallHack();
+    return NULL;
 }
 
 void init(){
