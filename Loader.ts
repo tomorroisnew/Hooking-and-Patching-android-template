@@ -1,9 +1,7 @@
-function hook_library(){
-    Java.perform(function() {
-        const System = Java.use('java.lang.System');
+var dlopena = Module.findExportByName(null, 'dlopen')
+var dlerrora = Module.findExportByName(null, 'dlerror')
 
-        System.load("/data/local/tmp/libyeet.so");
-    });
-}
+var dlopen = new NativeFunction(dlopena, 'pointer', ['pointer', 'int'])
+var dlerror = new NativeFunction(dlerrora, 'pointer', [])
 
-hook_library()
+dlopen("/data/data/com.dts.freefireth/libyeet.so")
